@@ -15,10 +15,10 @@
       <tr>
         <td><%= product.name %></td>
         <td><%= product.description %></td>
-        <td><%= product.image_url %></td>
+        <td ><a href="<%= product.image_url %>"> <%= product.image_url %> </a></td>
         <td><%= link_to 'Show', product %></td>
         <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to "Delete", product, :confirm => "Are you sure?", :method => :delete %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,10 +26,6 @@
 
 <br>
 
-<%= link_to 'New Product', new_product_path %>
+<p><button><%= link_to 'New Product', new_product_path %> &raquo;</button><p>
 
-<% paragraph_number = 1 %>
-<% 5.times do %>
-  <p>This is paragraph number <%= paragraph_number %></p>
-  <% paragraph_number = paragraph_number + 1 %>
-<% end %>
+
