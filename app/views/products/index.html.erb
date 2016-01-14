@@ -1,18 +1,17 @@
-<h1>Listing products</h1>
+
 
 <div class="container">
+  <h1>Listing products</h1>
   <div class="row">
   <% @products.each do |product| %>
-    <div class="col-sm-2 col-md-4">
+    <div class="col-sm-2 col-md-3">
       <h1><%= product.name %></h1>
-      <p><%= image_tag(product.image_url, class: "img-responsive") %><p>
+      <p><%= image_tag(product.image_url, class: "img-list") %><p>
       <p><%= product.description %></p>      
       <p>$<%= product.price %><p>
-<!--       <strong>$ 42</strong> -->
     </div><!-- /col -->
     <% end %>
   </div>
-</div>
 
 
 <table>
@@ -44,5 +43,8 @@
 <br>
 
 <p><button><%= link_to 'New Product', new_product_path %> &raquo;</button><p>
+
+</div>
+
 
 

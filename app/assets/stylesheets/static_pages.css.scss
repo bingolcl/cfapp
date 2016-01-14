@@ -5,7 +5,7 @@
 h1{
 	color: #315592;
     font-weight: bold;
-    font-family: "Arial", Helvetica,Arial, sans-serif;
+    font-family: "Century Gothic", "Avant Garde"，Arial, sans-serif;
 	padding-left: 20px;
 }
 
@@ -15,9 +15,23 @@ p{
 	padding-left: 20px;
 }
 
-.img-responsive {
-	width:100%;
-	width:auto \9;
+.img-list {
+	display: block;
+	width:15em;
+    height:10em;
+	overflow:hidden;
+}
+.img-responsive{
+
+	max-width: 100%;
+    width:auto \9;
+    height: auto;
+}
+
+.img-carousel{
+
+	max-width: 100%;
+    width:auto \9;
     height: auto;
 }
 
@@ -35,3 +49,8 @@ nav {
 	text-align: center;
 	padding-top: 20px;
 }
+
+footer{
+    text-align: center;
+}
+
