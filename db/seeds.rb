@@ -7,3 +7,4 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Product.create(:name => "seed-generated product", :description =>"I also created this product without using the HTML form!")
+Order.create(:user_id => "1", :product_id =>"1",:total =>"200")
