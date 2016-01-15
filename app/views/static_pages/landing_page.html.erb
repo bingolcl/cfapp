@@ -1,5 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Landing </title>
 
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+</head>
 
+<body>
 <h1>Featured Products:</h1>
 
     <div class="container-fluid" id="landing">
@@ -16,7 +24,7 @@
 
     <% @products.each do |product| %>
     <div class="item<%= " active" if product == @products.first %>">
-      <%= image_tag(product.image_url, class: "img-responsive img-carousel") %>
+      <img <%= image_tag(product.image_url, class: "img-responsive img-carousel") %>>
       <div class="carousel-caption">
         <p><%= product.name %></p>
       </div>
@@ -34,3 +42,7 @@
     <span class="sr-only">Next</span>
   </a>
 </div> <!-- end carousel-example-generic -->
+
+</body>
+</html>
+
