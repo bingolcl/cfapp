@@ -13,25 +13,13 @@ class OrdersController < ApplicationController
   end
 
   def create
-        @order = Order.new(order_params)
-
-    respond_to do |format|
-      if @order.save
-        format.html { redirect_to @order, notice: 'Order was successfully created.' }
-        format.json { render :show, status: :created, location: @order }
-      else
-        format.html { render :new }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
-      end
-    end
+    @order = Order.create(order_params)
+    respond_with @order
   end
 
   def destroy
-        @order.destroy
-    respond_to do |format|
-      format.html { redirect_to orders_url, notice: 'Order was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    respond_with Order.destroy(params[:id])
+
   end
 
   private
@@ -41,8 +29,8 @@ class OrdersController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def product_params
-      params.require(:product).permit(:user_id, :product_id, :total,)
+    def order_params
+      params.require(:order).permit(:product_id, :product_id, :total,)
     end
   end
 

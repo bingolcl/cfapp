@@ -15,11 +15,16 @@
 <body>
 <nav>
   <ul>
-    <li><a href="../static_pages/index.html">Home</a></li>
+<!--     <li><a href="../static_pages/index.html">Home</a></li>
     <li><a href="../static_pages/about.html">About</a></li>
     <li><a href="../static_pages/contact.html">Contact</a></li>
     <li><a href="../../products">Products</a></li>
-    <li><a href="../../orders">Orders</a></li>
+    <li><a href="../../orders">Orders</a></li> -->
+    <li><%= link_to 'Home', root_path %></li>
+    <li><%= link_to 'About', static_pages_about_path %></li>
+    <li><%= link_to 'Products', products_path %></li>
+    <li><%= link_to 'Orders', orders_path %></li>
+
   </ul>
   <hr>
 </nav>
