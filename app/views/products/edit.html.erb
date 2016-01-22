@@ -3,6 +3,8 @@
 
 <%= render 'form' %>
 <br>
-<p><button><%= link_to 'Show', @product %></button> |
-<button><%= link_to 'Back', products_path %></button><p>
+
+<p><%= link_to 'Show', @product, class: "btn btn-default navbar-btn" %>|
+<%= link_to 'Back', products_path, class: "btn btn-default navbar-btn" %><p>
+
 </div>

@@ -24,8 +24,18 @@
     <li><%= link_to 'About', static_pages_about_path %></li>
     <li><%= link_to 'Products', products_path %></li>
     <li><%= link_to 'Orders', orders_path %></li>
-
   </ul>
+
+
+
+<!-- search -->
+<%= form_tag("/products", method: "get",class: "navbar-form navbar-mid", role: "search") do %>
+  <div class="form-group">
+  <%= text_field_tag(:q, nil, class: "form-control", placeholder: "Product Search") %>
+  </div>
+  <%= submit_tag("Search", class: "btn btn-default") %>
+<% end %>
+
   <hr>
 </nav>
 
