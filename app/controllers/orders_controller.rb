@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_product, only: [:show, :new, :create, :destroy]
+  before_filter :authenticate_user!
 
   def index
     @orders = Order.all

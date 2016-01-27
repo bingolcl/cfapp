@@ -48,7 +48,8 @@ nav li{
 
 nav {
 	text-align: center;
-	padding-top: 20px;
+	padding-top: 1em;;
+	padding-bottom: 1.5em;
 }
 
 footer{
@@ -69,4 +70,12 @@ form{
 .panel{
 	padding: 3em;
 	padding-left: 10em;
+}
+
+
+.hmenu li{
+	list-style-type: none;
+	text-transform: lowercase;
+	padding: 0.3em;
+	display: inline; 
 }

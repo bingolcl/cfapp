@@ -13,6 +13,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
 <nav>
   <ul>
 <!--     <li><a href="../static_pages/index.html">Home</a></li>
@@ -27,19 +28,23 @@
     <li><%= link_to 'Orders', orders_path %></li>
   </ul>
 
-
+<!-- login -->
+<ul class="pull-right hmenu">
+  <%= render 'devise/registration_items' %>
+  <%= render 'devise/login_items' %>
+</ul>
 
 <!-- search -->
-<%= form_tag("/products", method: "get",class: "navbar-form navbar-mid", role: "search") do %>
+<%= form_tag("/products", method: "get",class: "navbar-form navbar-left", role: "search") do %>
   <div class="form-group">
   <%= text_field_tag(:q, nil, class: "form-control", placeholder: "Product Search") %>
   </div>
   <%= submit_tag("Search", class: "btn btn-default") %>
 <% end %>
 
-  <hr>
+<hr>
 </nav>
-
+  <%= flash[:notice] %>
 <%= yield %>
 
 <footer>
