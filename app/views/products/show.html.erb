@@ -1,27 +1,59 @@
 <div class="container">
-<p id="notice"><%= notice %></p>
+ <p id="notice"><%= notice %></p>
 
-<div id="product_info"><p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
+ <h1>Product Information</h1>
+ <div class="row">
+   <div class="col-sm-2 col-md-4" id="product_info">
+   	<p><%= image_tag(@product.image_url, class: "product_img") %></p>
+   	<h3>
+      <span class="glyphicon glyphicon-leaf"></span> Name:
+      <small><%= @product.name %></small>
+    </h3>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+    <h3>
+      <span class="glyphicon glyphicon-menu-hamburger"></span> Description:<small><%= @product.description %></small>
+    </h3>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
-</p>
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
-</div>
+    <h3>
+      <span class="glyphicon glyphicon-tag"></span> Price:
+      <small>$<%= @product.price %></small>
+    </h3>
 
-<p><%= link_to 'Edit', edit_product_path(@product), class: "btn btn-default navbar-btn" %> |
-<%= link_to 'Back', products_path,class: "btn btn-default navbar-btn" %></p>
-
+    <h3>
+      <span class="glyphicon glyphicon-comment"></span>Comments:
+    </h3>
+     
+     <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>User</th>
+        <th>Comments</th>
+        <th>Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>good</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>ok</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>bad</td>
+        <td>1</td>
+      </tr>
+    </tbody>
+    </table>
+   </div>
+  </div>
+  <div class="buttons"
+   <p><%= link_to 'Edit', edit_product_path(@product), class: "btn btn-default navbar-btn" %> |
+   <%= link_to'Back', products_path, class: "btn btn-default navbar-btn" %></p>
+  </div>
+ 
 </div>

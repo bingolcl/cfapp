@@ -6,7 +6,11 @@ h1{
 	color: #315592;
     font-weight: bold;
     font-family: "Century Gothic", "Avant Garde"，Arial, sans-serif;
-	padding-left: 20px;
+}
+
+h2{
+	color: #62799A;
+	padding-left: 10px;
 }
 
 p{
@@ -15,12 +19,12 @@ p{
 	padding-left: 20px;
 }
 
-.img-list {
-	display: block;
-	width:15em;
+.product_img{
+	width:14em;
     height:10em;
 	overflow:hidden;
 }
+
 .img-responsive{
 
 	width: 100%;
@@ -79,3 +83,12 @@ form{
 	padding: 0.3em;
 	display: inline; 
 }
+
+.row{
+	padding-top:1em;
+}
+
+.thumbnail{
+	padding-top:0.8em;
+}
+
