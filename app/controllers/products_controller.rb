@@ -11,13 +11,14 @@ class ProductsController < ApplicationController
     else
     @products = Product.all
     end
+
     respond_with @products
   end
-
-  # GET /products/1
-  # GET /products/1.json
+  
+# GET /products/1
+# GET /products/1.json
   def show
-    # @comments = @product.comments.order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
+   @comments = @product.comments.order("created_at DESC")
   end
 
   # GET /products/new
@@ -28,7 +29,7 @@ class ProductsController < ApplicationController
   # GET /products/1/edit
   def edit
   end
-
+  
   # POST /products
   # POST /products.json
   def create
@@ -79,4 +80,5 @@ class ProductsController < ApplicationController
     def product_params
       params.require(:product).permit(:name, :description, :image_url, :price)
     end
+
 end

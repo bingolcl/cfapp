@@ -19,41 +19,23 @@
       <small>$<%= @product.price %></small>
     </h3>
 
-    <h3>
-      <span class="glyphicon glyphicon-comment"></span>Comments:
-    </h3>
-     
-     <table class="table table-striped">
-      <thead>
-      <tr>
-        <th>User</th>
-        <th>Comments</th>
-        <th>Rating</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>John</td>
-        <td>good</td>
-        <td>5</td>
-      </tr>
-      <tr>
-        <td>Mary</td>
-        <td>ok</td>
-        <td>4</td>
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>bad</td>
-        <td>1</td>
-      </tr>
-    </tbody>
-    </table>
+   <h3>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </h3>
+
    </div>
   </div>
+
+  <%= render 'comments/new_comment' %>
+
+  <%= render 'comments' %>
+
+<br>
+
   <div class="buttons"
    <p><%= link_to 'Edit', edit_product_path(@product), class: "btn btn-default navbar-btn" %> |
    <%= link_to'Back', products_path, class: "btn btn-default navbar-btn" %></p>
   </div>
+
  
 </div>
+
+
