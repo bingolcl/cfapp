@@ -2,7 +2,7 @@
 
  <h1>Product Information</h1>
  <div class="row">
-   	<p><%= image_tag(@product.image_url, class: "product_img col-md-4") %></p>
+   	<p><%= image_tag(@product.image_url, class: "product_img") %></p>
    	<h2>
       <%= @product.name %>
     </h2>
@@ -14,7 +14,7 @@
       <strong>$<%= @product.price %></strong>
     </p>
 
-   <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
+<!--    <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p> -->
 
   </div>
 
