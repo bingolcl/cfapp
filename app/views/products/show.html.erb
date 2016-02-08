@@ -30,9 +30,6 @@
 
 <%= render partial: "new_comment" %>
 
- <% @comments.each do |product| %>
-  <p> <%= link_to 'Delete', product, method: :delete, data: {confirm: 'Are you sure?' }, class: "btn btn-default navbar-btn" %></p>
- <% end %>
 
 </div>
 
