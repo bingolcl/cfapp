@@ -3,39 +3,44 @@
 
  <h1>Product Information</h1>
  <div class="row">
-   <div class="col-sm-2 col-md-4" id="product_info">
-   	<p><%= image_tag(@product.image_url, class: "product_img") %></p>
-   	<h3>
-      <span class="glyphicon glyphicon-leaf"></span> Name:
-      <small><%= @product.name %></small>
-    </h3>
+   	<p><%= image_tag(@product.image_url, class: "product_img col-md-4") %></p>
+   	<h2>
+      <%= @product.name %>
+    </h2>
 
-    <h3>
-      <span class="glyphicon glyphicon-menu-hamburger"></span> Description:<small><%= @product.description %></small>
-    </h3>
+    <p><span class="glyphicon glyphicon-leaf"></span> <%= @product.description %></p>
 
-    <h3>
-      <span class="glyphicon glyphicon-tag"></span> Price:
-      <small>$<%= @product.price %></small>
-    </h3>
+    <p>
+      <span class="glyphicon glyphicon-tag"></span>
+      <strong>$<%= @product.price %></strong>
+    </p>
 
-   <h3>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </h3>
+   <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
 
-   </div>
   </div>
 
-  <%= render 'comments/new_comment' %>
 
-  <%= render 'comments' %>
+<div class="row">
 
-<br>
+<% unless (@product.comments.first.blank? ) %>
+  <%= render partial: "comments" %>
+<% else %>
+  <p class="alert text-info">No comments yet. Be the first to review this product</p>
+<% end %>
 
+<%= render partial: "new_comment" %>
+
+ <% @comments.each do |product| %>
+  <p> <%= link_to 'Delete', product, method: :delete, data: {confirm: 'Are you sure?' }, class: "btn btn-default navbar-btn" %></p>
+ <% end %>
+
+</div>
+
+  <hr>
   <div class="buttons"
    <p><%= link_to 'Edit', edit_product_path(@product), class: "btn btn-default navbar-btn" %> |
    <%= link_to'Back', products_path, class: "btn btn-default navbar-btn" %></p>
   </div>
 
- 
-</div>
 
 
