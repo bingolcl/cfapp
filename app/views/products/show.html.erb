@@ -1,9 +1,39 @@
 <div class="container">
 
  <h1>Product Information</h1>
+ <div class="row">
+    <p><%= image_tag(@product.image_url, class: "product_img col-md-4") %></p>
+    <h2>
+      <%= @product.name %>
+    </h2>
+
+    <p><span class="glyphicon glyphicon-leaf"></span> <%= @product.description %></p>
+
+    <p>
+      <span class="glyphicon glyphicon-tag"></span>
+      <strong>$<%= @product.price %></strong>
+    </p>
+
+   <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
+
+  </div>
 
 
+<div class="row">
 
+<% unless (@product.comments.first.blank? ) %>
+  <%= render partial: "comments" %>
+<% else %>
+  <p class="alert text-info">No comments yet. Be the first to review this product</p>
+<% end %>
+
+<%= render partial: "new_comment" %>
+
+ <% @comments.each do |product| %>
+  <p> <%= link_to 'Delete', product, method: :delete, data: {confirm: 'Are you sure?' }, class: "btn btn-default navbar-btn" %></p>
+ <% end %>
+
+</div>
 
   <hr>
 
