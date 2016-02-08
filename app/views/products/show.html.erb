@@ -22,13 +22,6 @@
 
 <div class="row">
 
-<% unless (@product.comments.first.blank? ) %>
-  <%= render partial: "comments" %>
-<% else %>
-  <p class="alert text-info">No comments yet. Be the first to review this product</p>
-<% end %>
-
-<%= render partial: "new_comment" %>
 
  <% @comments.each do |product| %>
   <p> <%= link_to 'Delete', product, method: :delete, data: {confirm: 'Are you sure?' }, class: "btn btn-default navbar-btn" %></p>
