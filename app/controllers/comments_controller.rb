@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
-  def index
-    @comments = @comments.paginate(:page => params[:page], :per_page => 30)
-  end
+  # def index
+  #   @comments = @comments.paginate(:page => params[:page], :per_page => 30)
+  # end
 
   def create
     @product = Product.find(params[:product_id])
