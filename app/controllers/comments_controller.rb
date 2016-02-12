@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   def index
-    @comments = @comments.paginate(:page => params[:page], :per_page => 5)
+    @comments = Comment.paginate(:page => params[:page], :per_page => 3)
   end
 
 def create

@@ -1,7 +1,8 @@
 class Comment < ActiveRecord::Base
   belongs_to :user
   belongs_to :product
-
+  
+  delegate :first_name, to: :user, allow_nil: true, prefix: true
   validates :body, presence: true
   validates :user, presence: true
   validates :product, presence: true
