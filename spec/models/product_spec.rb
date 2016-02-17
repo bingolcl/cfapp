@@ -3,11 +3,11 @@ require 'rails_helper'
 describe Product do
 
 	before do
-      @product = Product.create!(name: "race bike")
-      @user = User.create(email: "test@email.com", password: "123456")
-      @product.comments.create!(rating: 1, user: @user, body: "Awful bike!")
-      @product.comments.create!(rating: 3, user: @user, body: "Ok bike!")
-      @product.comments.create!(rating: 5, user: @user, body: "Cool bike!")
+      @product = Product.create!(name: "Rabbit")
+      @user = User.create(email: "test@email.com", password: "123321")
+      @product.comments.create!(rating: 1, user: @user, body: "Awful!")
+      @product.comments.create!(rating: 3, user: @user, body: "So-so!")
+      @product.comments.create!(rating: 5, user: @user, body: "Cool!")
     end
 
     it "returns the average rating of all comments" do
