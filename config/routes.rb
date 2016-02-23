@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   resources :users
 
   devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
+  devise_scope :user do
+    get '/users', to: "devise/sessions#create"
+  end
+
   resources :orders, only: [:index, :show, :create, :destroy]
 
   get 'static_pages/about'

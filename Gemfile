@@ -34,7 +34,7 @@ gem 'devise'
 gem 'cancancan'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem "factory_girl_rails", "~> 4.0"
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
