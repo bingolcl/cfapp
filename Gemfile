@@ -37,6 +37,10 @@ gem 'cancancan'
 gem "factory_girl_rails", "~> 4.0"
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem 'guard-rspec', require: false
+gem 'spork-rails' 
+#Connecting Guard & Spork
+gem 'guard-spork'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
@@ -55,3 +59,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 end
 
+group :development do
+  gem 'guard'
+end
