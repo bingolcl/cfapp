@@ -44,12 +44,12 @@ gem 'guard-spork'
 gem 'sqlite3'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
+#payment gem
 gem 'stripe'
 
 group :production do
 	gem 'rails_12factor'
 	gem 'pg'
-	gem 'sqlite3'
 end
 
 group :development, :test do
@@ -58,6 +58,7 @@ end
 
 group :development do
   gem 'guard'
+  gem 'sqlite3'
 end
 
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
