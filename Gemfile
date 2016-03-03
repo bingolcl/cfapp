@@ -41,14 +41,11 @@ gem 'guard-rspec', require: false
 gem 'spork-rails' 
 #Connecting Guard & Spork
 gem 'guard-spork'
-
+gem 'sqlite3'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
-
-group :development, :test do 
-	gem 'sqlite3'
-
-end
+#stripe setup(payment)
+gem 'stripe'
 
 group :production do
 	gem 'rails_12factor'
@@ -62,3 +59,5 @@ end
 group :development do
   gem 'guard'
 end
+
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?
