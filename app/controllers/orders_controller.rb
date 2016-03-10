@@ -1,14 +1,12 @@
 class OrdersController < ApplicationController
-  before_action :set_product, only: [:show, :new, :create, :destroy]
-  before_filter :authenticate_user!
+
   protect_from_forgery with: :null_session
-  respond_to :json, :html
+  respond_to :json, :html 
 
   def index
-    @orders = Order.all.to_json(:include => [{:product => {:only => :name}}, {:user => {:only => :email}}])
+    @orders = Order.includes(:product, :user).all.to_json(:include => [:product, :user])
     respond_with @orders
   end
-
   def show
     @order = Order.find(params[:id]).to_json(:include => [{:product => {:only => :name}}, {:user => {:only => :email}}])
     respond_with @order

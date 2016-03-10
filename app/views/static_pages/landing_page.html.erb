@@ -9,9 +9,11 @@
 
 <body>
 <%= params[:example_key] %>
-
-<h1>Featured Products:</h1>
-
+<% if user_signed_in? %>
+<h1>Welcome <%= current_user.first_name %>!</h1>
+<% else %>
+<h1>Welcome!</h1>
+<% end %>
     <div class="container-fluid" id="landing">
       <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->

@@ -12,6 +12,11 @@ Rails.application.routes.draw do
 
   resources :orders, only: [:index, :show, :create, :destroy]
 
+  resources :payments
+  post 'payments/create'
+  
+  post 'orders/show'
+
   get 'static_pages/about'
 
   get 'static_pages/contact'
