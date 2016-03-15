@@ -1,6 +1,7 @@
 class PaymentsController < ApplicationController
   before_filter :authenticate_user!
   def create
+  	byebug
     @product = Product.find(params[:product_id])
     @user = current_user
     token = params[:stripeToken]
