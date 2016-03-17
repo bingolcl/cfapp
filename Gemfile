@@ -43,10 +43,12 @@ gem 'spork-rails'
 gem 'guard-spork'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+# Call 'byebug' anywhere in the code to stop execution and get a debugger console
 gem 'byebug'
 #payment gem
 gem 'stripe'
+#Brakeman Security Scanner
+gem "brakeman", :require => false
 
 group :development, :test do 
 	gem 'sqlite3'
