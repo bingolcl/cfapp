@@ -2,7 +2,7 @@
 
  <h1>Product Information</h1>
  <div class="row">
-    <p><%= image_tag(@product.image_url, class: "product_img col-md-4") %></p>
+    <p><%= image_tag(@product.image_url, id:"zoom", class: "product_img col-md-4 img-zoom",data_zoom_image:@product.image_url) %></p>
     <h2>
       <%= @product.name %>
     </h2>

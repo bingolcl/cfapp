@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require jquery.raty
 //= require site
+//= require jquery.elevateZoom-3.0.8.min
 
