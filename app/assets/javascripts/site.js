@@ -16,7 +16,7 @@ $(document).on('ready page:load', function(){
 			zoomWindowWidth 	: 500,
 			zoomWindowHeight 	: 300,
 			zoomWindowPosition	: 1,
-			zoomWindowOffetx	: 180,
+			zoomWindowOffetx	: 220,
 			zoomWindowOffety	: 0,
 			zoomWindowFadeIn	: 500,
 			zoomWindowFadeOut	: 500,
