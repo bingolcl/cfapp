@@ -22,7 +22,7 @@
     <td></td>
   </thead>
 
-<tr ng-repeat="order in orders">
+<tr ng-repeat="order in orders | orderBy:'-id':reverse">
   <td>
     {{order.id}}
   </td>
