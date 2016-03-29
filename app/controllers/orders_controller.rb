@@ -1,19 +1,19 @@
 class OrdersController < ApplicationController
-
-  protect_from_forgery with: :null_session
-  respond_to :json, :html 
+  protect_from_forgery
+  skip_before_action :verify_authenticity_token, if: :json_request?
+  respond_to :json, :html
 
   def index
-    @orders = Order.includes(:product, :user).all.to_json(:include => [:product, :user])
+    @orders = Order.all.to_json(:include => [{:product => {:only => :name}}, {:user => {:only => :email}}])
     respond_with @orders
   end
+
   def show
     @order = Order.find(params[:id]).to_json(:include => [{:product => {:only => :name}}, {:user => {:only => :email}}])
     respond_with @order
   end
 
   def new
-    @order = Order.new
   end
 
   def create
@@ -23,14 +23,17 @@ class OrdersController < ApplicationController
 
   def destroy
     respond_with Order.destroy(params[:id])
+  end
 
+  protected
+
+  def json_request?
+    request.format.json?
   end
 
   private
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def order_params
-      params.require(:order).permit(:product_id, :user_id, :total)
-    end
+  def order_params
+    params.require(:order).permit(:product_id, :user_id, :total)
   end
-
+end

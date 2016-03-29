@@ -47,6 +47,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem 'byebug'
 #payment gem
 gem 'stripe'
+#Client-side MVC
+gem 'angularjs-rails'
 #Brakeman Security Scanner
 gem "brakeman", :require => false
 

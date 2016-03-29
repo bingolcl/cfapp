@@ -14,5 +14,8 @@
 //= require jquery_ujs
 //= require jquery.raty
 //= require site
+//= require angular
+//= require angular-resource
 //= require jquery.elevateZoom-3.0.8.min
+//= require_tree .
 
