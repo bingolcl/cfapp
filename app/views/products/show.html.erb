@@ -2,6 +2,7 @@
 
  <h1>Product Information</h1>
  <div class="row">
+  <% cache @product do %>
     <p><%= image_tag(@product.image_url, id:"zoom", class: "product_img col-md-4 img-zoom",data_zoom_image:@product.image_url) %></p>
     <h2>
       <%= @product.name %>
@@ -13,9 +14,9 @@
       <span class="glyphicon glyphicon-tag"></span>
       <strong>$<%= @product.price %></strong>
     </p>
-
+   
    <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
-
+   <% end %> <!-- cache block-->
    <%= form_tag "/payments/create" do %>
      <%= render partial: "shared/stripe_checkout_button" %>
    <% end %>
